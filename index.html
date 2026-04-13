@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stopmonke — tame your monkey mind</title>
+  <meta name="description" content="stopmonke helps you focus by silencing distracting apps and notifications. Pick a task. Block the noise. Earn the monk." />
+  <meta property="og:title" content="stopmonke" />
+  <meta property="og:description" content="Tame your monkey mind. Focus app for Android." />
+  <meta property="og:url" content="https://stopmonke.app" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --indigo:  #1A1A3E;
+      --surface: #242450;
+      --gold:    #F5C842;
+      --teal:    #4ECDC4;
+      --white:   #F0EFFF;
+      --gray:    #9B9BC0;
+    }
+
+    body {
+      background: var(--indigo);
+      color: var(--white);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-link {
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--white); }
+
+    /* ── Hero ── */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+
+    .monk-svg {
+      width: 120px;
+      height: 160px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeUp 0.8s ease-out 0.2s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.4s forwards;
+    }
+    h1 span { color: var(--gold); }
+
+    .subtitle {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: var(--gray);
+      line-height: 1.6;
+      max-width: 480px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.6s forwards;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.8s forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--indigo);
+      font-weight: 700;
+      font-size: 16px;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .badge:hover { opacity: 0.88; }
+
+    .coming-soon {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    /* ── How it works ── */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      padding: 0 24px 80px;
+      max-width: 860px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 1s forwards;
+    }
+
+    .step {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      flex: 1 1 220px;
+      max-width: 260px;
+      text-align: center;
+    }
+    .step-emoji { font-size: 32px; margin-bottom: 12px; }
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .step-body {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--gray);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: var(--gray); text-decoration: underline; }
+    footer a:hover { color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">stopmonke</a>
+    <a class="nav-link" href="/privacy">Privacy Policy</a>
+  </nav>
+
+  <section class="hero">
+
+    <!-- Monk SVG inline -->
+    <svg class="monk-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" fill="none">
+      <circle cx="80" cy="42" r="26" stroke="#F5C842" stroke-width="1.8"/>
+      <line x1="80" y1="68" x2="80" y2="90" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M42 95 Q80 80 118 95" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M42 95 Q36 130 38 155 Q80 165 122 155 Q124 130 118 95" stroke="#F5C842" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M38 155 Q20 160 18 175 Q40 185 80 182" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M122 155 Q140 160 142 175 Q120 185 80 182" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M46 110 Q30 140 34 168" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M114 110 Q130 140 126 168" stroke="#F5C842" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="34" cy="172" r="5" stroke="#F5C842" stroke-width="1.5"/>
+      <circle cx="126" cy="172" r="5" stroke="#F5C842" stroke-width="1.5"/>
+      <circle cx="80" cy="38" r="2.5" fill="#F5C842"/>
+      <path d="M72 52 Q80 58 88 52" stroke="#F5C842" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    <h1>tame your<br/><span>monkey mind.</span></h1>
+    <p class="subtitle">
+      Pick a task. Block the noise. Earn the monk.<br/>
+      A focus app that actually gets out of your way.
+    </p>
+
+    <div class="cta-group">
+      <a class="badge" href="https://play.google.com/store/apps/details?id=com.synexiomlabs.stopmonke">
+        Get it on Google Play
+      </a>
+      <span class="coming-soon">Android · Free download</span>
+    </div>
+
+  </section>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-emoji">✍️</div>
+      <div class="step-title">Name your task</div>
+      <div class="step-body">Tell the monk what you're working on. One thing at a time.</div>
+    </div>
+    <div class="step">
+      <div class="step-emoji">🔕</div>
+      <div class="step-title">Block the noise</div>
+      <div class="step-body">Select the apps that steal your focus. Notifications silenced.</div>
+    </div>
+    <div class="step">
+      <div class="step-emoji">🧘</div>
+      <div class="step-title">Earn the monk</div>
+      <div class="step-body">Complete sessions. Build your streak. The monk rewards discipline.</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Synexiom Labs Inc. &nbsp;·&nbsp;
+    <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="mailto:hello@stopmonke.app">Contact</a>
+  </footer>
+
+</body>
+</html>

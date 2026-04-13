@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — stopmonke</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --indigo:  #1A1A3E;
+      --surface: #242450;
+      --gold:    #F5C842;
+      --white:   #F0EFFF;
+      --gray:    #9B9BC0;
+    }
+
+    body {
+      background: var(--indigo);
+      color: var(--white);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-link {
+      font-size: 14px;
+      color: var(--gray);
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--white); }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .updated {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 36px 0 12px;
+    }
+
+    p { font-size: 15px; color: rgba(240,239,255,0.85); margin-bottom: 16px; }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    li {
+      font-size: 15px;
+      color: rgba(240,239,255,0.85);
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: rgba(245,200,66,0.08);
+      border-left: 3px solid var(--gold);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    a { color: var(--gold); }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--gray);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: var(--gray); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">stopmonke</a>
+    <a class="nav-link" href="/">← Home</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 2026</p>
+
+    <div class="highlight">
+      <strong>Short version:</strong> stopmonke stores all data locally on your device.
+      Nothing is collected, transmitted, or shared with any server or third party. Ever.
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>
+      stopmonke is developed and maintained by <strong>Synexiom Labs Inc.</strong>
+      If you have any questions about this policy, contact us at
+      <a href="mailto:hello@stopmonke.app">hello@stopmonke.app</a>.
+    </p>
+
+    <h2>2. Data we collect</h2>
+    <p>
+      stopmonke does <strong>not</strong> collect, store, or transmit any personal
+      data to external servers. There are no analytics, no crash reporting services,
+      no advertising SDKs, and no accounts.
+    </p>
+    <p>All data created by your use of the app — focus sessions, streaks, and
+    settings — is stored exclusively on your device using local storage (Hive
+    database and SharedPreferences). It never leaves your device.</p>
+
+    <h2>3. Permissions we use and why</h2>
+    <p>stopmonke requests the following Android permissions to function:</p>
+
+    <ul>
+      <li>
+        <strong>Usage Access (PACKAGE_USAGE_STATS)</strong> — used to detect
+        when a blocked app is brought to the foreground, so the focus overlay
+        can be shown. This data is read locally in real-time and never stored
+        or transmitted.
+      </li>
+      <li>
+        <strong>Display over other apps (SYSTEM_ALERT_WINDOW)</strong> — used
+        to draw the monk focus overlay on top of blocked apps when you open them
+        during a focus session. No content from other apps is accessed or recorded.
+      </li>
+      <li>
+        <strong>Notification Listener Access</strong> — used to suppress
+        notifications from apps you have chosen to block during a focus session.
+        Notification content is never read, stored, or transmitted. The service
+        only cancels (dismisses) notifications from your selected blocked apps
+        while a session is active.
+      </li>
+      <li>
+        <strong>Foreground Service</strong> — keeps the focus timer running
+        reliably while you work, even if the app is in the background.
+      </li>
+      <li>
+        <strong>Post Notifications</strong> — displays a persistent status
+        notification during an active focus session, as required by Android
+        for foreground services.
+      </li>
+    </ul>
+
+    <h2>4. Data sharing</h2>
+    <p>
+      We do not share any data with third parties because we do not collect any
+      data in the first place. There are no third-party SDKs, analytics tools,
+      advertising networks, or data brokers involved in this app.
+    </p>
+
+    <h2>5. Data retention and deletion</h2>
+    <p>
+      All app data is stored locally on your device. You can delete all app data
+      at any time by going to <strong>Android Settings → Apps → stopmonke →
+      Clear Data</strong>, or by uninstalling the app. We have no copy of your
+      data and cannot recover it.
+    </p>
+
+    <h2>6. Children's privacy</h2>
+    <p>
+      stopmonke is not directed at children under 13. We do not knowingly collect
+      information from children.
+    </p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>
+      If we update this policy, the revised version will be posted at this URL
+      with an updated date at the top. Continued use of the app after changes
+      constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+      Questions or concerns? Email us at
+      <a href="mailto:hello@stopmonke.app">hello@stopmonke.app</a>.
+    </p>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Synexiom Labs Inc. &nbsp;·&nbsp;
+    <a href="/">stopmonke</a>
+  </footer>
+
+</body>
+</html>
